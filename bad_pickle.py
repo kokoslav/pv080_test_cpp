@@ -16,14 +16,13 @@ def transcode_file(filename):
 # Assert statements
 def statements(user):
     """statements"""
-    print user.is_admin, 'user does not have access'
-   # secure code...
+    print (user.is_admin, 'user does not have access')
+    # secure code...
 
 
 # Pickles
-class RunBinSh(object):
+class RunBinSh():
     """runbinsh"""
-    name = "name"
     def __reduce__(self):
         return (subprocess.Popen, (('/bin/sh',),))
 
